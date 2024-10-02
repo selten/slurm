@@ -13,6 +13,7 @@
 <li><a href="#multi">Communication with multiple clusters</a></li>
 <li><a href="#federation">Communication in a federation</a></li>
 <li><a href="#ipv6">Communication with IPv6</a></li>
+<li><a href="#table">Table overview</a></li>
 </ul>
 
 <h2 id="overview">Overview<a class="slurm_link" href="#overview"></a></h2>
@@ -261,5 +262,50 @@ debug logging in your slurmctld.log.</p>
 127.0.0.1. This is not necessarily an indication of a problem.</p>
 
 <p style="text-align:center;">Last modified 25 November 2020</p>
+
+<h2 id="table">Table overview
+<a class="slurm_link" href="#table"></a>
+</h2>
+
+<table><thead></thead>
+  <tr>
+    <th>Source</th>
+    <th>Destination</th>
+    <th>Default Port</th>
+    <th>Usage</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Clients</td>
+    <td>Slurm controllers (slurmctld)</td>
+    <td>6817</td>
+    <td>salloc, sacctmgr, sbatch, sbcast, scancel, scontrol, sdiag, sinfo, sprio, squeue, sshare, sstat, strigger, sview</td>
+  </tr>
+  <tr>
+    <td>Clients</td>
+    <td>Slurm nodes (slurmd)</td>
+    <td>6818</td>
+    <td>srun, sstat</td>
+  </tr>
+  <tr>
+    <td>Clients</td>
+    <td>Slurm controllers (slurmdbd)</td>
+    <td>6819</td>
+    <td>sacct, sacctmgr, sreport</td>
+  </tr>
+  <tr>
+    <td>Slurm controllers (slurmctld)</td>
+    <td>Slurm nodes (slurmd)</td>
+    <td>6818</td>
+    <td>Communication</td>
+  </tr>
+  <tr>
+    <td>Slurm nodes (slurmd)</td>
+    <td>Slurm controllers (slurmctld)</td>
+    <td>6817</td>
+    <td>Communication</td>
+  </tr>
+</tbody>
+</table>
 
 <!--#include virtual="footer.txt"-->
